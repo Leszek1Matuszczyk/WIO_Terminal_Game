@@ -95,11 +95,11 @@ byte heroMove(hero person) {
     }
 
     // Ensure hero stays within screen boundaries
-    if (person.posY > 190 & person.posY < 240 - person.sizeY) {
+    if (person.posY >=190 & person.posY < 240 - person.sizeY) {
       Spaceship.posY = person.posY;
     } else {
       if (person.posY < 190) {
-        person.posY = 191;
+        person.posY = 192;
       } else {
         person.posY = 239 - person.sizeY;
       }
@@ -209,7 +209,7 @@ byte Target(int posX, int posY, int sizeX, int sizeY, uint32_t filling, byte sta
 
 byte points(int point) {
   // Display the current score and remaining balls on the screen
-  lcd.fillRect(0, 0, 340, 17, TFT_CYAN);
+  lcd.fillRect(0, 0, 340, 17, TFT_WHITE);
   lcd.setCursor(0, 12);
   lcd.setTextColor(TFT_BLACK);
   lcd.setFreeFont(FF1);
@@ -238,7 +238,9 @@ void setup() {
   lcd.setFreeFont(FF1);
   lcd.print("Leszek Entertainment Corp.");
   lcd.println();
-  lcd.print("");
+  lcd.println();
+  lcd.println();
+  lcd.print("https://github.com\n     /Leszek1Matuszczyk\n          /WIO_Terminal_Game");
   delay(15000);
   lcd.fillScreen(TFT_BLACK);
 
